@@ -1,0 +1,118 @@
+/* newsletter.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    background-image: url('../img/NewsLetter/carbon-fiber.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire container */
+}
+
+.newsletter-container {
+    font-family: sans-serif;
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: solid;
+    border-color: #333;
+    border-width: 2px;
+}
+
+.newsletter-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.newsletter-container p { /* Aggiunto stile per il paragrafo */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.newsletter-container .form-group {
+    margin-bottom: 25px; /* Aumentato lo spazio per il messaggio di errore */
+    position: relative; /* Importante per posizionare il messaggio di errore */
+}
+
+.newsletter-container label {
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Assicura il colore del testo per la label */
+}
+
+.newsletter-container input[type="text"],
+.newsletter-container input[type="email"],
+.newsletter-container input[type="tel"] {
+    width: calc(100% - 22px); /* Adattato per includere padding e border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding e border nella larghezza */
+    font-size: 1em; /* Assicura una dimensione del font di base */
+}
+
+/* NUOVI STILI PER LA VALIDAZIONE */
+
+/* Stile per i campi con errore */
+.newsletter-container input.input-error {
+    border-color: #dc3545; /* Bordo rosso per errore */
+}
+
+/* Stile per il messaggio di errore */
+.error-message {
+    color: #dc3545; /* Testo rosso per l'errore */
+    font-size: 0.85em;
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -20px; /* Posiziona sotto l'input, aggiustato per lo spazio */
+    white-space: nowrap; /* Evita che il testo vada a capo se troppo lungo */
+    display: flex; /* Permette l'allineamento dell'icona e del testo */
+    align-items: center; /* Allinea verticalmente icona e testo */
+}
+
+.error-message::before { /* Pseudo-elemento per l'icona */
+    content: '';
+    display: inline-block;
+    width: 16px; /* Larghezza dell'icona */
+    height: 16px; /* Altezza dell'icona */
+    background-image: url('../img/alert-icon.png'); /* Percorso della tua icona di avviso */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px; /* Spazio tra icona e testo */
+    /* vertical-align: middle; -- Non necessario con display:flex */
+}
+
+/* FINE NUOVI STILI PER LA VALIDAZIONE */
+
+.newsletter-container button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 20px; /* Spazio sopra il pulsante */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Aggiunto transition per hover */
+}
+
+.newsletter-container button[type="submit"]:hover {
+    background-color: #555; /* Cambiato il colore al passaggio del mouse per feedback visivo */
+    transform: scale(1.02);
+}
+
+/* Media queries per responsività */
+@media (max-width: 768px) {
+    .newsletter-container {
+        margin: 20px 10px; /* Margine sui lati per schermi più piccoli */
+        padding: 15px;
+    }
+}
